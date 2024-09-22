@@ -96,6 +96,9 @@ main {
 
 .card-1 {
   background-color: var(--moderate-violet);
+  background-image: url('./images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: top right 10%;
 }
 
 .card-2 {
