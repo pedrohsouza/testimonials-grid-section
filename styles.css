@@ -45,11 +45,15 @@ body {
   font-size: 1.3rem;
   background-color: var(--light-grayish-blue);
   margin: 0 auto;
-  height: 100vh;
-  padding: 6rem 2rem;
+  min-height: 100vh;
+  padding: 6rem 2rem 1.6rem;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+
+  max-width: 130rem;
 }
 
 main {
@@ -143,9 +147,19 @@ main {
   }
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--very-dark-blackish-blue);
+  /* padding-bottom: 1.6rem; */
+}
+
 @media (min-width: 1024px) {
   body {
-    padding: 10rem;
+    padding: 10rem 10rem 1.6rem;
   }
 
   main {
