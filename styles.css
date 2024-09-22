@@ -21,8 +21,12 @@ img {
   /* ======= Primary ========= */
   --moderate-violet: hsl(263, 55%, 52%);
   --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-grayish-blue-50: hsla(217, 19%, 35%, 0.5);
+  --very-dark-grayish-blue-70: hsla(217, 19%, 35%, 0.7);
   --very-dark-blackish-blue: hsl(219, 29%, 14%);
   --white: hsl(0, 0%, 100%);
+  --white-50: hsla(0, 0%, 100%, 0.5);
+  --white-70: hsla(0, 0%, 100%, 0.7);
 
   /* ======= Neutral ========= */
   --light-gray: hsl(0, 0%, 81%);
@@ -35,12 +39,106 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--light-blue-100);
+  font-family: 'Barlow Semi Condensed', system-ui;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.3rem;
+  background-color: var(--light-grayish-blue);
   margin: 0 auto;
+  height: 100vh;
+  padding: 6rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: grid;
+  gap: 2rem;
 }
 
 .card {
   border-radius: 1rem;
-  background-color: blueviolet;
+  padding: 2.5rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & .card-header {
+    display: grid;
+    grid-template-areas:
+      'img name'
+      'img badge';
+    justify-content: start;
+    justify-items: start;
+    column-gap: 1.5rem;
+
+    & img {
+      border-radius: 50%;
+      width: 3rem;
+      grid-area: img;
+    }
+
+    & .name {
+      grid-area: name;
+    }
+
+    & .badge {
+      grid-area: badge;
+    }
+  }
+}
+
+.card-1 {
+  background-color: var(--moderate-violet);
+}
+
+.card-2 {
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.card-4 {
+  background-color: var(--very-dark-blackish-blue);
+}
+
+.card-3,
+.card-5 {
+  background-color: var(--white);
+
+  & .name {
+    color: var(--very-dark-grayish-blue);
+  }
+
+  & .summary {
+    color: var(--very-dark-grayish-blue);
+  }
+
+  & .badge {
+    color: var(--very-dark-grayish-blue-50);
+  }
+
+  & .review-quote {
+    color: var(--very-dark-grayish-blue-70);
+  }
+}
+
+.card-1,
+.card-2,
+.card-4 {
+  & .name {
+    color: var(--white);
+  }
+
+  & .summary {
+    color: var(--white);
+  }
+
+  & .badge {
+    color: var(--white-50);
+  }
+
+  & .review-quote {
+    color: var(--white-70);
+  }
 }
